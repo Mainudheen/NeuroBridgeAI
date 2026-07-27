@@ -1,0 +1,30 @@
+# Environment variables
+backend/.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Reports
+backend/reports/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Root environment file
+.env
+
+# Backend environment file
+backend/.env
