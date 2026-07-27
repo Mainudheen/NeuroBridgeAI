@@ -62,3 +62,10 @@ def download_report():
         filename="Autism_Report.pdf",
         media_type="application/pdf"
     )
+
+@app.get("/")
+async def root():
+    return {
+        "status": "ok",
+        "message": "NeuroBridgeAI Backend is Running 🚀"
+    }
