@@ -15,3 +15,6 @@ python-multipart
 pydantic
 reportlab
 openpyxl
+python-dotenv
+google-genai
+langgraph
