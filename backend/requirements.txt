@@ -3,13 +3,9 @@ uvicorn
 pandas
 numpy
 scikit-learn
-xgboost
-lightgbm
-catboost
 joblib
 matplotlib
 seaborn
-lime
 python-multipart
 pydantic
 reportlab
