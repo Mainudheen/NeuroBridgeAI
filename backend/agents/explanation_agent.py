@@ -6,12 +6,16 @@ Explanation Agent
 """
 
 import joblib
-import shap
 import pandas as pd
 import matplotlib.pyplot as plt
 
 from pathlib import Path
 from sklearn.linear_model import LogisticRegression
+
+try:
+    import shap
+except ImportError:
+    shap = None
 
 
 class ExplanationAgent:
@@ -65,6 +69,9 @@ class ExplanationAgent:
                 patient_scaled = self.scaler.transform(patient_df)
             else:
                 patient_scaled = patient_df.values
+
+            if shap is None:
+                raise RuntimeError("SHAP is not installed in this environment.")
 
             # Create SHAP explainer
             explainer = shap.LinearExplainer(
