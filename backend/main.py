@@ -23,11 +23,14 @@ app = FastAPI(
     title="NeuroBridge AI",
     version="1.0"
 )
-
+origins = [
+    "http://localhost:5173",                 # Local React development
+    "https://neuro-bridge-ai-three.vercel.app",  # Production frontend
+]
 # CORS Middleware for React frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
