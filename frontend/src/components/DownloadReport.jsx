@@ -1,11 +1,10 @@
 import React from "react";
+import api from "../services/api";
 import "./Card.css";
 
 function DownloadReport({ pdfPath }) {
-    const apiBaseUrl = (import.meta.env.VITE_API_URL || "http://127.0.0.1:8000").replace(/\/$/, "");
-
     const handleDownload = () => {
-        // Trigger download directly from backend server endpoint
+        const apiBaseUrl = api.defaults.baseURL || import.meta.env.VITE_API_URL || "";
         const downloadUrl = `${apiBaseUrl}/download-report`;
         window.open(downloadUrl, "_blank");
     };
